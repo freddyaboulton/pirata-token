@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  unit_tests
+  unit_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.8
