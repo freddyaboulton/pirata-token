@@ -42,8 +42,6 @@ def test_multiple_people_can_mint(simple_token_contract, accounts):
 def test_cannot_buy_if_out_of_stock(simple_token_contract, accounts):
     tx = simple_token_contract.mint(10, {'from': accounts[1]})
 
-    with pytest.raises(VirtualMachineError, match="OUT_OF_STOCK"):
-        print(simple_token_contract)
-        print(accounts[0])
+    with pytest.raises(Exception, match="OUT_OF_STOCK"):
         tx = simple_token_contract.mint(2, {'from': accounts[0]})
         tx.wait(0.2)
