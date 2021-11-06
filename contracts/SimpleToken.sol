@@ -31,6 +31,6 @@ contract SimpleToken is ERC721Enumerable, Ownable {
     function tokenURI(uint256 tokenId) public view override(ERC721) returns (string memory) {
         require(_exists(tokenId), "Cannot query non-existent token");
         
-        return _tokenBaseURI;
+        return string(abi.encodePacked(_tokenBaseURI, tokenId.toString()));
     }
 }
