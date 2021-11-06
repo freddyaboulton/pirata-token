@@ -20,6 +20,7 @@ def test_owner_can_mint(simple_token_contract, accounts):
     assert simple_token_contract.ownerOf(1) == accounts[0]
     assert simple_token_contract.balanceOf(accounts[0]) == 1
     assert simple_token_contract.totalSupply() == 1
+    assert simple_token_contract.tokenURI(1) == "https://my-json-server.typicode.com/freddyaboulton/pirata-token/tokens/1"
 
 def test_multiple_people_can_mint(simple_token_contract, accounts):
     simple_token_contract.mint(1, {'from': accounts[1]})
