@@ -9,7 +9,7 @@ on:
 
 jobs:
   unit_tests:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
